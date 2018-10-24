@@ -1,0 +1,40 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	var insta = 500; //инстаграм
+	var clean = 1000; //уборка
+	var timeBase = 176; // норма часов
+	var time1 = 176; //рабочие часы первой смены (Светлана, Алия)
+	var time2 = 165; //рабочие часы второй смены (Лидия, Динара)
+	var baseCash = 18000; //расчётная база оклада
+	d = 1;
+	while(d>0){
+	var sales = +prompt("Введите сумму выручки с начала месяца");
+	var bonus = Math.round(sales/100);
+	var cash1 = Math.round(baseCash/timeBase)*time1;
+	var cash2 = Math.round(baseCash/timeBase)*time2;
+	var cashLidia = Math.round(cash2+bonus+clean);
+	var cashSvetaAliya = Math.round(cash1+bonus+clean);
+	var cashDinara = Math.round(cash2+bonus+clean+insta);
+	i = 0;
+	while (i<1){
+	var name = prompt("Как Вас звать?").toLowerCase();	
+	if (name=="лидия"||name=="лида"){
+		alert ("В этом месяце у Вас "+ time2 +" рабочих часов!");
+		alert ("Ваш оклад составит: "+ cash2 + " ₽"+"\nЗа уборку доплата: " + clean + " ₽"+"\nБонус с продаж составит: " + bonus + " ₽"+"\nИтоговая сумма: = "+cashLidia+" ₽");
+		i+=1
+	}else if (name=="света"||name=="светлана"||name=="алия"){
+		alert ("В этом месяце у Вас "+ time1 +" рабочих часов!");
+		alert ("Ваш оклад составит: "+ cash1 + " ₽"+"\nЗа уборку доплата: " + clean + " ₽"+"\nБонус с продаж составит: " + bonus + " ₽"+"\nИтоговая сумма: = "+cashSvetaAliya+" ₽");
+		i+=1
+	}else if (name=="динара"||name=="королева монголии"){
+		alert("В этом месяце у Вас "+ time2 +" рабочих часов!");
+		alert ("Ваш оклад составит: "+ cash2 + " ₽"+"\nЗа уборку доплата: " + clean + " ₽"+"\nЗа ведение Instagram: " + insta +" ₽"+ "\nБонус с продаж составит: " + bonus + " ₽"+"\nИтоговая сумма = "+cashDinara+" ₽");
+		i+=1	
+	}else{
+		alert("У нас таких нету, все нормальные ребята. \nПовторите ввод");
+	}
+	}
+	d=+1;
+	}
+
+</script>
